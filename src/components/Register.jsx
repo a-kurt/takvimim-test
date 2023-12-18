@@ -1270,7 +1270,7 @@ const Register = () => {
       
       setSuccess(true);
 
-      window.location = "${process.env.PUBLIC_URL}/main";
+      window.location = "/takvimim-test/main";
     } catch (err) {
       if (!err?.response) {
         setErrMsg('No Server Response');

@@ -42,7 +42,7 @@ const Login = () => {
       
       setSuccess(true);
 
-      window.location = "takvimim-test/main";
+      window.location = "/takvimim-test/main";
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
