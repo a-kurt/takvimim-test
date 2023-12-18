@@ -42,7 +42,7 @@ const Login = () => {
       
       setSuccess(true);
 
-      window.location = "/takvimim-test/main";
+      //window.location = "/takvimim-test/main";
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
@@ -106,7 +106,11 @@ const Login = () => {
                 type="submit"
                 className="w-full text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-sm text-sm px-5 py-4 text-center"
               >
-                Giriş Yap
+                <Link
+                  to="/main"
+                  >
+                    Giris Yap
+                  </Link>
               </button>
               <p className="text-sm text-[#374754] text-center">
                 Hesabın yok mu?{" "}
