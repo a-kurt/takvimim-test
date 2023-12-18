@@ -3,6 +3,10 @@
   "name": "takvimim",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-kurt/takvimim-test.git"
+  },  
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^1.0.6",
