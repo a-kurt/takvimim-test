@@ -3,7 +3,7 @@ import { BiChevronRight, BiChevronLeft } from "react-icons/bi";
 import { CiCircleInfo } from "react-icons/ci";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import axios from '/home/atakan/Desktop/Takvimim/takvimim/src/api/axios.js';
+import axios from '../api/axios';
 
 const FULLNAME_REGEX = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
 const USERNAME_REGEX = /^[a-zA-Z0-9]{3,24}$/;

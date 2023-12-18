@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "/home/atakan/Desktop/Takvimim/takvimim/src/api/axios.js";
+import axios from "../api/axios";
 
 const LOGIN_URL = "/api/v1/auth/authenticate";
 
