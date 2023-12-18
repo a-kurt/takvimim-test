@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as HeroImg} from '/home/atakan/Desktop/Takvimim/takvimim/src/images/undraw_date_picker_re_r0p8.svg'
+import {ReactComponent as HeroImg} from '../images/undraw_date_picker_re_r0p8.svg'
 import Login from '../components/Login'
 
 
