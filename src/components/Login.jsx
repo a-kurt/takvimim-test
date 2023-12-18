@@ -42,7 +42,7 @@ const Login = () => {
       
       setSuccess(true);
 
-      window.location = "/main";
+      window.location = "${process.env.PUBLIC_URL}/main";
     } catch (err) {
       if (!err?.response) {
         setErrMsg("No Server Response");
