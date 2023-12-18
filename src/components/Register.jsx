@@ -1630,7 +1630,7 @@ const Register = () => {
                     type="submit"
                     class="border-2 border-blue-500 flex items-center text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-sm text-sm px-3 py-3 text-center"
                   >
-                    <span class="ml-2">Devam Et</span>
+                    <Link to="main"><span class="ml-2 w-full h-full">Devam Et</span></Link>
                     <BiChevronRight size={26} class="" />
                   </button>
                 
