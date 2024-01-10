@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/takvimim-test/static/css/main.1a82744c.css",
+    "main.js": "/takvimim-test/static/js/main.a2c59981.js",
+    "reactPlayerYouTube.js": "/takvimim-test/static/js/reactPlayerYouTube.41799b4b.chunk.js",
+    "reactPlayerSoundCloud.js": "/takvimim-test/static/js/reactPlayerSoundCloud.eff49629.chunk.js",
+    "reactPlayerVimeo.js": "/takvimim-test/static/js/reactPlayerVimeo.c0e003ce.chunk.js",
+    "reactPlayerFacebook.js": "/takvimim-test/static/js/reactPlayerFacebook.c8525c6e.chunk.js",
+    "reactPlayerStreamable.js": "/takvimim-test/static/js/reactPlayerStreamable.4fb51740.chunk.js",
+    "reactPlayerWistia.js": "/takvimim-test/static/js/reactPlayerWistia.d21c982a.chunk.js",
+    "reactPlayerTwitch.js": "/takvimim-test/static/js/reactPlayerTwitch.36fdcec7.chunk.js",
+    "reactPlayerDailyMotion.js": "/takvimim-test/static/js/reactPlayerDailyMotion.18a0dc53.chunk.js",
+    "reactPlayerMixcloud.js": "/takvimim-test/static/js/reactPlayerMixcloud.3e45eea0.chunk.js",
+    "reactPlayerVidyard.js": "/takvimim-test/static/js/reactPlayerVidyard.a25376c3.chunk.js",
+    "reactPlayerKaltura.js": "/takvimim-test/static/js/reactPlayerKaltura.d7e2c376.chunk.js",
+    "reactPlayerFilePlayer.js": "/takvimim-test/static/js/reactPlayerFilePlayer.d9460919.chunk.js",
+    "reactPlayerPreview.js": "/takvimim-test/static/js/reactPlayerPreview.8e82bcb5.chunk.js",
+    "static/media/undraw_date_picker_re_r0p8.svg": "/takvimim-test/static/media/undraw_date_picker_re_r0p8.bd91573e08b0700ba6fa4a0d79c7f413.svg",
+    "static/media/undraw_mail_sent_re_0ofv.svg": "/takvimim-test/static/media/undraw_mail_sent_re_0ofv.41b434370fac1b3fae33b9c86a7b7bef.svg",
+    "static/media/undraw_cat_epte.svg": "/takvimim-test/static/media/undraw_cat_epte.e1062b2ae670aeb47d06473ed370657a.svg",
+    "index.html": "/takvimim-test/index.html",
+    "main.1a82744c.css.map": "/takvimim-test/static/css/main.1a82744c.css.map",
+    "main.a2c59981.js.map": "/takvimim-test/static/js/main.a2c59981.js.map",
+    "reactPlayerYouTube.41799b4b.chunk.js.map": "/takvimim-test/static/js/reactPlayerYouTube.41799b4b.chunk.js.map",
+    "reactPlayerSoundCloud.eff49629.chunk.js.map": "/takvimim-test/static/js/reactPlayerSoundCloud.eff49629.chunk.js.map",
+    "reactPlayerVimeo.c0e003ce.chunk.js.map": "/takvimim-test/static/js/reactPlayerVimeo.c0e003ce.chunk.js.map",
+    "reactPlayerFacebook.c8525c6e.chunk.js.map": "/takvimim-test/static/js/reactPlayerFacebook.c8525c6e.chunk.js.map",
+    "reactPlayerStreamable.4fb51740.chunk.js.map": "/takvimim-test/static/js/reactPlayerStreamable.4fb51740.chunk.js.map",
+    "reactPlayerWistia.d21c982a.chunk.js.map": "/takvimim-test/static/js/reactPlayerWistia.d21c982a.chunk.js.map",
+    "reactPlayerTwitch.36fdcec7.chunk.js.map": "/takvimim-test/static/js/reactPlayerTwitch.36fdcec7.chunk.js.map",
+    "reactPlayerDailyMotion.18a0dc53.chunk.js.map": "/takvimim-test/static/js/reactPlayerDailyMotion.18a0dc53.chunk.js.map",
+    "reactPlayerMixcloud.3e45eea0.chunk.js.map": "/takvimim-test/static/js/reactPlayerMixcloud.3e45eea0.chunk.js.map",
+    "reactPlayerVidyard.a25376c3.chunk.js.map": "/takvimim-test/static/js/reactPlayerVidyard.a25376c3.chunk.js.map",
+    "reactPlayerKaltura.d7e2c376.chunk.js.map": "/takvimim-test/static/js/reactPlayerKaltura.d7e2c376.chunk.js.map",
+    "reactPlayerFilePlayer.d9460919.chunk.js.map": "/takvimim-test/static/js/reactPlayerFilePlayer.d9460919.chunk.js.map",
+    "reactPlayerPreview.8e82bcb5.chunk.js.map": "/takvimim-test/static/js/reactPlayerPreview.8e82bcb5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a82744c.css",
+    "static/js/main.a2c59981.js"
+  ]
+}
