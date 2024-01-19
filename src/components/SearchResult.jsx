@@ -6,7 +6,7 @@ const SearchResult = ({ result }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(linkToCalendar, { replace: true });
+    navigate(linkToCalendar);
   };
 
   return (

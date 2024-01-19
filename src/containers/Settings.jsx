@@ -3,19 +3,15 @@ import {useEffect, useState} from 'react'
 import Navbar from "../components/Navbar";
 import axios from "../api/axios";
 import useAuth from "../hooks/useAuth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Settings = () => {
-    const [hey, setHey] = useState(true);
-
     const [selectedProvince, setSelectedProvince] = useState('');
     const [selectedDistrict, setSelectedDistrict] = useState('');
 
     const { auth } = useAuth()
-    const userId = auth?.id
-
-    const handleHey = () => {
-    setHey(!hey)
-    }
+    const userId = auth?.id;
 
     const [buttonStates, setButtonStates] = useState({
         Pazartesi: false,
@@ -29,7 +25,7 @@ const Settings = () => {
         birsaat: false,
       });
 
-
+    
     useEffect(() => {
         const fetchSettings = async () => {
         try {
@@ -86,10 +82,13 @@ const Settings = () => {
               'Content-Type': 'application/json',
             },
           });
-      
-          console.log('Settings saved successfully:', response.data);
-        } catch (error) {
-          console.error('Error saving settings:', error);
+		  toast.success("Ayarlar Başarıyla Kaydedildi!", {
+			position: toast.POSITION.TOP_RIGHT,
+		  });
+            } catch (error) {
+				toast.error("Ayarlar Kaydedilmedi!", {
+					position: toast.POSITION.TOP_RIGHT,
+			});
         }
       };
               
@@ -227,7 +226,8 @@ const Settings = () => {
             </div>
             <div className='pt-15 py-12 flex items-center justify-center text-xl font-normal mx-auto '> 
                 <button className={`w-32 px-4 py-3 text-center items-center justify-center md:inline ${'bg-blue-500 text-white'}`} onClick={handleSaveSettings} >Kaydet</button>
-            </div>
+				<ToastContainer />
+			</div>
 
        </div>
     </div>

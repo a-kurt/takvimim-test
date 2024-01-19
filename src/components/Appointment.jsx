@@ -15,7 +15,7 @@ const Appointment = ({
   const handleReject = async () => {
     try {
       // Assuming you have an API endpoint for rejecting requests
-      await axios.delete(
+      await axios.put(
         `/api/v1/auth/appointments/reject/${idSender}/${idReceiver}/${startTime}`
       );
     } catch (error) {

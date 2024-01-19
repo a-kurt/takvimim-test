@@ -14,6 +14,7 @@ import AppointmentSuccessPage from "./containers/AppointmentSuccessPage";
 import VerificationCodePage from "./pages/VerificationCodePage";
 import VerificationSuccess from "./pages/VerificationSuccess";
 import Music from "./pages/Music";
+import Loading from "./components/Loading";
 
 function App() {
   return (

@@ -19,7 +19,7 @@ const Request = ({ id, appointmentName, startTime, endTime, idSender, idReceiver
   const handleReject = async () => {
     try {
       // Assuming you have an API endpoint for rejecting requests
-      await axios.delete(`/api/v1/auth/appointments/reject/${idSender}/${idReceiver}/${startTime}`);
+      await axios.put(`/api/v1/auth/appointments/reject/${idSender}/${idReceiver}/${startTime}`);
 
       // Perform any additional actions after rejecting the request
 

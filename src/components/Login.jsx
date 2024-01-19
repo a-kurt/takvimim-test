@@ -12,7 +12,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  const from = "/";
 
   const emailRef = useRef();
   const errRef = useRef();
@@ -55,7 +55,7 @@ const Login = () => {
         setEmail('');
         setPassword('');
         
-        navigate(from, { replace: true });
+        navigate(from);
       }
     } catch (err) {
       if (!err?.response) {

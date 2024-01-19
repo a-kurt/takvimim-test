@@ -20,7 +20,7 @@ const AdminResult = ({ result, handleUserBan, onSelectResult }) => {
   };
 
   return (
-    <div onClick={handleResultClick} key={result.id} className='flex flex-row justify-between items-center p-3 border-b border-[#DDDDDD]'>
+    <div onClick={handleResultClick} key={result.id} className='flex flex-row justify-between items-center p-3 border-b border-[#DDDDDD] cursor-pointer'>
       <div className='w-3/4 md:w-3/5 flex flex-col md:flex-row'>
         <div className='md:w-2/5 text-sm sm:text-base'>
           <p>{result.id}</p>

@@ -4,12 +4,15 @@ import Calendar from "../components/Calendar";
 import { useLocation, useNavigate, useParams } from "react-router-dom"; // Import the useParams hook
 import axios from "../api/axios";
 import useAuth from "../hooks/useAuth";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Loading from "../components/Loading";
 
 const CalendarAppointmentPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from =  location.state?.from?.pathname || "/appointmentSuccessPage";
+  const [loading, setLoading] = useState(false);
 
   const { nickname } = useParams();
   const [userData, setUserData] = useState(null);
@@ -22,13 +25,20 @@ const CalendarAppointmentPage = () => {
   const GET_APPOINTMENT_URL = `/api/v1/auth/appointment`; // TODO: Change this to valid URL, ask murat.
 
   useEffect(() => {
+    setLoading(true);
     const fetchUser = async () => {
-      try {
-        const response = await axios.get(USER_DATA_URL);
-        setUserData(response.data);
-      } catch (error) {
-        console.error("Error fetching user data:", error.message);
-      }
+      // Add a delay of 500 ms using setTimeout
+      setTimeout(async () => {
+        try {
+          const response = await axios.get(USER_DATA_URL);
+          setUserData(response.data);
+        } catch (error) {
+          console.error("Error fetching user data:", error.message);
+        } finally {
+          // Set loading to false after the API call is completed
+          setLoading(false);
+        }
+      }, 300);
     };
 
     fetchUser();
@@ -160,7 +170,9 @@ const CalendarAppointmentPage = () => {
 
       navigate(from, { replace: true });
     } catch (error) {
-      console.log("Error sending appointment request:", error.message);
+      toast.error("Randevu Alınamadı!", {
+        position: toast.POSITION.TOP_RIGHT,
+    });
     }
   };
 
@@ -177,79 +189,81 @@ const CalendarAppointmentPage = () => {
   }, [selectedDate]);
 
   return (
-    <div className="flex flex-col h-screen">
-      <div className="z-10">
-        <Navbar />
-      </div>
-      <div className="flex-1 flex flex-row justify-between items-center">
-        <div>
-          <div className="mb-10 ml-32 mr-6">
-            <p className="mb-2 font-bold text-4xl">{fullName.toUpperCase()}</p>
-            <p className="mb-2 font-medium text-xl">
-              {province} / {state}
-            </p>
-            <p className="font-medium text-xl">{email}</p>
+    <>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className="flex flex-col h-screen">
+          <div className="z-10">
+            <Navbar />
           </div>
-          <div className="w-[600px] h-[400px] border border-[#D4D5DF] overflow-y-auto shadow-md ml-32 mr-6">
-            <div className="grid grid-cols-4">
-              {timeSlots.map((time, index) => {
-                // Check if the time slot corresponds to an existing appointment on the selected day
-                const isDisabled =
-                  hasAppointmentOnSelectedDate &&
-                  appointments.some((appointment) => {
-                    const appointmentDate = new Date(appointment.startTime);
-                    const selectedDateTime = new Date(selectedDate);
-
+          <div className="flex-1 flex flex-row justify-between items-center">
+            <div>
+              <div className="mb-10 ml-32 mr-6">
+                <p className="mb-2 font-bold text-4xl">{fullName.toUpperCase()}</p>
+                <p className="mb-2 font-medium text-xl">
+                  {province} / {state}
+                </p>
+                <p className="font-medium text-xl">{email}</p>
+              </div>
+              <div className="w-[600px] h-[400px] border border-[#D4D5DF] overflow-y-auto shadow-md ml-32 mr-6">
+                <div className="grid grid-cols-4">
+                  {timeSlots.map((time, index) => {
+                    // Check if the time slot corresponds to an existing appointment on the selected day
+                    const isDisabled =
+                      hasAppointmentOnSelectedDate &&
+                      appointments.some((appointment) => {
+                        const appointmentDate = new Date(appointment.startTime);
+                        const selectedDateTime = new Date(selectedDate);
+  
+                        return (
+                          appointmentDate.getFullYear() === selectedDateTime.getFullYear() &&
+                          appointmentDate.getMonth() === selectedDateTime.getMonth() &&
+                          appointmentDate.getDate() === selectedDateTime.getDate() &&
+                          appointmentDate.getHours() === parseInt(time.split(":")[0]) &&
+                          appointmentDate.getMinutes() === parseInt(time.split(":")[1])
+                        );
+                      });
+  
                     return (
-                      appointmentDate.getFullYear() ===
-                        selectedDateTime.getFullYear() &&
-                      appointmentDate.getMonth() ===
-                        selectedDateTime.getMonth() &&
-                      appointmentDate.getDate() ===
-                        selectedDateTime.getDate() &&
-                      appointmentDate.getHours() ===
-                        parseInt(time.split(":")[0]) &&
-                      appointmentDate.getMinutes() ===
-                        parseInt(time.split(":")[1])
+                      <div
+                        key={index}
+                        className={`flex justify-center items-center font-medium p-2 border cursor-pointer h-[80px] ${
+                          selectedTime === time
+                            ? "bg-blue-500 text-white"
+                            : isDisabled
+                            ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                            : "bg-white"
+                        }`}
+                        onClick={() => !isDisabled && handleTimeClick(time)} // Only invoke handleTimeClick if the slot is not disabled
+                      >
+                        {time}
+                      </div>
                     );
-                  });
-
-                return (
-                  <div
-                    key={index}
-                    className={`flex justify-center items-center font-medium p-2 border cursor-pointer h-[80px] ${
-                      selectedTime === time
-                        ? "bg-blue-500 text-white"
-                        : isDisabled
-                        ? "bg-gray-300 text-gray-600 cursor-not-allowed"
-                        : "bg-white"
-                    }`}
-                    onClick={() => !isDisabled && handleTimeClick(time)} // Only invoke handleTimeClick if the slot is not disabled
-                  >
-                    {time}
-                  </div>
-                );
-              })}
+                  })}
+                </div>
+              </div>
+              <div className="flex justify-center mt-12 ml-32 mr-6">
+                <button
+                  onClick={handleAppointmentRequest}
+                  type="submit"
+                  className={`w-2/3 text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-sm text-sm px-5 py-4 text-center ${
+                    !selectedTime ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
+                >
+                  Randevu Al
+                </button>
+                <ToastContainer />
+              </div>
+            </div>
+            <div className="mr-32">
+              <Calendar onDayClick={handleDayClick} daysOfWeek={daysOfWeek} isUsersCalendar={false} />
             </div>
           </div>
-          <div className="flex justify-center mt-12 ml-32 mr-6">
-            <button
-              onClick={handleAppointmentRequest}
-              type="submit"
-              className={`w-2/3 text-white bg-blue-500 hover:bg-blue-600 focus:outline-none font-medium rounded-sm text-sm px-5 py-4 text-center ${
-                !selectedTime ? "opacity-50 cursor-not-allowed" : "" // Apply styles to make it visually disabled
-              }`}
-            >
-              Randevu Al
-            </button>
-          </div>
         </div>
-        <div className="mr-32">
-          <Calendar onDayClick={handleDayClick} daysOfWeek={daysOfWeek} isUsersCalendar={false} />
-        </div>
-      </div>
-    </div>
+      )}
+    </>
   );
-};
+                }
 
 export default CalendarAppointmentPage;
