@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/takvimim-test/static/css/main.1a82744c.css",
-    "main.js": "/takvimim-test/static/js/main.a2c59981.js",
+    "main.css": "/takvimim-test/static/css/main.04b2c90e.css",
+    "main.js": "/takvimim-test/static/js/main.1345ae43.js",
     "reactPlayerYouTube.js": "/takvimim-test/static/js/reactPlayerYouTube.41799b4b.chunk.js",
     "reactPlayerSoundCloud.js": "/takvimim-test/static/js/reactPlayerSoundCloud.eff49629.chunk.js",
     "reactPlayerVimeo.js": "/takvimim-test/static/js/reactPlayerVimeo.c0e003ce.chunk.js",
@@ -19,8 +19,8 @@
     "static/media/undraw_mail_sent_re_0ofv.svg": "/takvimim-test/static/media/undraw_mail_sent_re_0ofv.41b434370fac1b3fae33b9c86a7b7bef.svg",
     "static/media/undraw_cat_epte.svg": "/takvimim-test/static/media/undraw_cat_epte.e1062b2ae670aeb47d06473ed370657a.svg",
     "index.html": "/takvimim-test/index.html",
-    "main.1a82744c.css.map": "/takvimim-test/static/css/main.1a82744c.css.map",
-    "main.a2c59981.js.map": "/takvimim-test/static/js/main.a2c59981.js.map",
+    "main.04b2c90e.css.map": "/takvimim-test/static/css/main.04b2c90e.css.map",
+    "main.1345ae43.js.map": "/takvimim-test/static/js/main.1345ae43.js.map",
     "reactPlayerYouTube.41799b4b.chunk.js.map": "/takvimim-test/static/js/reactPlayerYouTube.41799b4b.chunk.js.map",
     "reactPlayerSoundCloud.eff49629.chunk.js.map": "/takvimim-test/static/js/reactPlayerSoundCloud.eff49629.chunk.js.map",
     "reactPlayerVimeo.c0e003ce.chunk.js.map": "/takvimim-test/static/js/reactPlayerVimeo.c0e003ce.chunk.js.map",
@@ -36,7 +36,7 @@
     "reactPlayerPreview.8e82bcb5.chunk.js.map": "/takvimim-test/static/js/reactPlayerPreview.8e82bcb5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a82744c.css",
-    "static/js/main.a2c59981.js"
+    "static/css/main.04b2c90e.css",
+    "static/js/main.1345ae43.js"
   ]
 }
